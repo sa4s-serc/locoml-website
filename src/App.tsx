@@ -8,6 +8,7 @@ import { Playground } from '@/pages/Playground';
 import { Hero } from '@/components/sections/Hero';
 import { WhySection } from '@/components/sections/why/WhySection';
 import { ArchitectureSection } from '@/components/sections/architecture/ArchitectureSection';
+import { CapabilitiesSection } from '@/components/sections/capabilities/CapabilitiesSection';
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       <Hero />
       <WhySection />
       <ArchitectureSection />
+      <CapabilitiesSection />
     </>
   );
 }
