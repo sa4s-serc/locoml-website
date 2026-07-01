@@ -1,6 +1,6 @@
 import { PlatformHero } from '@/components/platform/PlatformHero';
 import { PlatformOverview } from '@/components/platform/PlatformOverview';
-import { PlatformWorkflowSection } from '@/components/platform/PlatformWorkflowSection';
+import { PlatformIntelligenceSection } from '@/components/platform/PlatformIntelligenceSection';
 import { PlatformHighlights } from '@/components/platform/PlatformHighlights';
 
 export function Platform() {
@@ -8,7 +8,7 @@ export function Platform() {
     <>
       <PlatformHero />
       <PlatformOverview />
-      <PlatformWorkflowSection />
+      <PlatformIntelligenceSection />
       <PlatformHighlights />
     </>
   );
