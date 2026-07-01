@@ -6,6 +6,31 @@ interface BaseAnimationProps extends HTMLMotionProps<'div'> {
   delay?: number;
 }
 
+export const StaggerContainer = forwardRef<HTMLDivElement, BaseAnimationProps & { staggerChildren?: number }>(
+  ({ children, staggerChildren = 0.1, delay = 0, className, ...props }, ref) => (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-50px' }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren,
+            delayChildren: delay,
+          },
+        },
+      }}
+      className={className}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  )
+);
+StaggerContainer.displayName = 'StaggerContainer';
+
 export const FadeUp = forwardRef<HTMLDivElement, BaseAnimationProps>(
   ({ children, delay = 0, className, ...props }, ref) => (
     <motion.div

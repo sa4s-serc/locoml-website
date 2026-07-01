@@ -5,15 +5,13 @@ import { Background } from '@/components/common/Background';
 import { ResponsiveHelper } from '@/components/common/ResponsiveHelper';
 import { Playground } from '@/pages/Playground';
 
-// Placeholder Home Component
+import { Hero } from '@/components/sections/Hero';
+
 function Home() {
   return (
-    <div className="flex min-h-[70vh] items-center justify-center pt-20">
-      <div className="text-center">
-        <h1 className="text-5xl font-heading font-bold text-heading">LoCoML Platform</h1>
-        <p className="mt-4 text-xl text-paragraph">Architecture Phase 1 Complete.</p>
-      </div>
-    </div>
+    <>
+      <Hero />
+    </>
   );
 }
 
