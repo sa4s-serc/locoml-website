@@ -41,7 +41,7 @@ export function ArchitectureSection() {
           <div className="mx-auto w-full max-w-6xl">
             
             {/* System Architecture */}
-            <div className="w-full">
+            <div className="w-full border border-black rounded-[24px] md:rounded-[32px] p-8 md:p-10 bg-white">
               <StaggerContainer delay={0.2} staggerChildren={0.15} className="flex flex-col items-center w-full">
                 <FadeUp className="w-full">
                   <ArchitectureLayer layer={layers.layer1} />
