@@ -4,26 +4,26 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 pt-[80px] pb-[48px] flex flex-col items-center justify-center">
         
         {/* Logos Row */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-[80px] mb-[40px]">
-          <a href="#" className="block transition-all duration-200 opacity-90 hover:opacity-100 hover:-translate-y-[2px]">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-[64px] md:gap-[120px] mb-[48px]">
+          <a href="#" className="block">
             <img 
               src="/SA4S.svg" 
               alt="SA4S" 
-              className="h-12 md:h-14 w-auto object-contain"
+              className="h-[120px] md:h-[140px] w-auto object-contain"
             />
           </a>
-          <a href="#" className="block transition-all duration-200 opacity-90 hover:opacity-100 hover:-translate-y-[2px]">
+          <a href="#" className="block">
             <img 
               src="/SERC.png" 
               alt="SERC" 
-              className="h-12 md:h-14 w-auto object-contain grayscale-[0.2]"
+              className="h-[100px] md:h-[120px] w-auto object-contain grayscale-[0.2]"
             />
           </a>
-          <a href="#" className="block transition-all duration-200 opacity-90 hover:opacity-100 hover:-translate-y-[2px]">
+          <a href="#" className="block">
             <img 
               src="/IIIT.png" 
               alt="IIIT Hyderabad" 
-              className="h-12 md:h-14 w-auto object-contain"
+              className="h-[80px] md:h-[96px] w-auto object-contain"
             />
           </a>
         </div>
