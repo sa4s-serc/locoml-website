@@ -27,9 +27,9 @@ export function PlatformOverview() {
   ];
 
   return (
-    <section className="relative w-full py-24 bg-slate-50 border-y border-border/50">
+    <section className="relative w-full pt-12 pb-24 bg-slate-50 border-y border-border/50">
       <Container>
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-20">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
           <FadeUp>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-slate-900 leading-[1.2] mb-6">
               Everything you need to build autonomous machine learning systems.

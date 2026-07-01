@@ -54,7 +54,7 @@ function HeroIllustration() {
 
 export function PlatformHero() {
   return (
-    <section className="relative w-full pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
+    <section className="relative w-full pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden bg-white">
       
       {/* Subtle Blueprint Background (2% opacity) */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none opacity-[0.02] text-slate-900 flex items-center justify-center overflow-hidden">
@@ -75,7 +75,7 @@ export function PlatformHero() {
 
       <Container className="relative z-10">
         
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-10">
           <FadeUp>
             <Tag className="mb-8 shadow-sm bg-white">PLATFORM</Tag>
           </FadeUp>
