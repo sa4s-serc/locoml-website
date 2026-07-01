@@ -1,27 +1,26 @@
 import { capabilitiesConfig } from '@/config/capabilities.config';
 import { PlatformModule } from './PlatformModule';
 import { FadeUp, StaggerContainer } from '@/components/animations/Animations';
-// Placeholder for illustrations (we will create these next)
 import { PipelineBuilderIllustration } from './modules/PipelineBuilder/Illustration';
 import { ResolverIllustration } from './modules/Resolver/Illustration';
-import { ModelZooIllustration } from './modules/ModelZoo/Illustration';
 import { DashboardIllustration } from './modules/Dashboard/Illustration';
 import { StressTestingIllustration } from './modules/StressTesting/Illustration';
 import { InferenceStudioIllustration } from './modules/InferenceStudio/Illustration';
 import { AdaptiveRoutingIllustration } from './modules/AdaptiveRouting/Illustration';
+import { StitchModelIllustration } from './modules/StitchModel/Illustration';
 import { PipelinePortabilityIllustration } from './modules/PipelinePortability/Illustration';
-import { DeploymentIllustration } from './modules/Deployment/Illustration';
+import { PipelineLLMIllustration } from './modules/PipelineLLM/Illustration';
 
 const IllustrationMap: Record<string, React.ReactNode> = {
   'pipeline-builder': <PipelineBuilderIllustration />,
   'resolver': <ResolverIllustration />,
-  'model-zoo': <ModelZooIllustration />,
   'dashboard': <DashboardIllustration />,
   'stress-testing': <StressTestingIllustration />,
   'inference-studio': <InferenceStudioIllustration />,
   'routing': <AdaptiveRoutingIllustration />,
+  'stitch-model': <StitchModelIllustration />,
   'pipeline-portability': <PipelinePortabilityIllustration />,
-  'deployment': <DeploymentIllustration />
+  'pipeline-llm': <PipelineLLMIllustration />
 };
 
 export function CapabilitiesSection() {
@@ -70,8 +69,8 @@ export function CapabilitiesSection() {
             </FadeUp>
             <FadeUp className="flex h-full lg:col-span-2">
               <PlatformModule 
-                {...capabilitiesConfig.find(c => c.id === 'model-zoo')!} 
-                media={IllustrationMap['model-zoo']}
+                {...capabilitiesConfig.find(c => c.id === 'dashboard')!} 
+                media={IllustrationMap['dashboard']}
                 className="w-full h-full"
               />
             </FadeUp>
@@ -82,22 +81,22 @@ export function CapabilitiesSection() {
             {/* Row 2 */}
             <FadeUp className="flex h-full">
               <PlatformModule 
-                {...capabilitiesConfig.find(c => c.id === 'dashboard')!} 
-                media={IllustrationMap['dashboard']}
-                className="w-full h-full"
-              />
-            </FadeUp>
-            <FadeUp className="flex h-full">
-              <PlatformModule 
                 {...capabilitiesConfig.find(c => c.id === 'stress-testing')!} 
                 media={IllustrationMap['stress-testing']}
                 className="w-full h-full"
               />
             </FadeUp>
-            <FadeUp className="flex h-full md:col-span-2 lg:col-span-1">
+            <FadeUp className="flex h-full">
               <PlatformModule 
                 {...capabilitiesConfig.find(c => c.id === 'inference-studio')!} 
                 media={IllustrationMap['inference-studio']}
+                className="w-full h-full"
+              />
+            </FadeUp>
+            <FadeUp className="flex h-full md:col-span-2 lg:col-span-1">
+              <PlatformModule 
+                {...capabilitiesConfig.find(c => c.id === 'routing')!} 
+                media={IllustrationMap['routing']}
                 className="w-full h-full"
               />
             </FadeUp>
@@ -105,8 +104,8 @@ export function CapabilitiesSection() {
             {/* Row 3 */}
             <FadeUp className="flex h-full">
               <PlatformModule 
-                {...capabilitiesConfig.find(c => c.id === 'routing')!} 
-                media={IllustrationMap['routing']}
+                {...capabilitiesConfig.find(c => c.id === 'stitch-model')!} 
+                media={IllustrationMap['stitch-model']}
                 className="w-full h-full"
               />
             </FadeUp>
@@ -119,8 +118,8 @@ export function CapabilitiesSection() {
             </FadeUp>
             <FadeUp className="flex h-full md:col-span-2 lg:col-span-1">
               <PlatformModule 
-                {...capabilitiesConfig.find(c => c.id === 'deployment')!} 
-                media={IllustrationMap['deployment']}
+                {...capabilitiesConfig.find(c => c.id === 'pipeline-llm')!} 
+                media={IllustrationMap['pipeline-llm']}
                 className="w-full h-full"
               />
             </FadeUp>

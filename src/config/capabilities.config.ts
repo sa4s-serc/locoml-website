@@ -21,12 +21,6 @@ export const capabilitiesConfig: CapabilityConfig[] = [
     chip: 'AI Powered'
   },
   {
-    id: 'model-zoo',
-    title: 'Model Zoo',
-    description: 'Train, organize, version, publish, and reuse machine learning models across projects.',
-    chip: 'Management'
-  },
-  {
     id: 'dashboard',
     title: 'Pipeline Dashboard',
     description: 'Monitor execution status, pipeline health, metrics, runtime progress, and workflow lineage across Configured, Running, Completed, and Failed states.',
@@ -47,8 +41,14 @@ export const capabilitiesConfig: CapabilityConfig[] = [
   {
     id: 'routing',
     title: 'Adaptive Routing',
-    description: 'Automatically recommends the most efficient model by evaluating both private and public model repositories based on application requirements.',
+    description: 'Continuously monitors deployed models and automatically reroutes inference to healthier alternatives whenever model quality degrades.',
     chip: 'Optimization'
+  },
+  {
+    id: 'stitch-model',
+    title: 'Stitch Model',
+    description: 'Intelligently recommends and stitches together the most suitable public and private machine learning models based on dataset semantics, performance history, and application requirements.',
+    chip: 'Recommendation'
   },
   {
     id: 'pipeline-portability',
@@ -57,9 +57,9 @@ export const capabilitiesConfig: CapabilityConfig[] = [
     chip: 'Portability'
   },
   {
-    id: 'deployment',
-    title: 'Deployment',
-    description: 'Deploy validated pipelines and production-ready models through a unified deployment workflow.',
-    chip: 'Production'
+    id: 'pipeline-llm',
+    title: 'Pipeline LLM',
+    description: 'Generate complete machine learning pipelines from natural language prompts. Describe your problem, and LoCoML constructs the workflow automatically.',
+    chip: 'AI Powered'
   }
 ];
