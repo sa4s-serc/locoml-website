@@ -9,6 +9,7 @@ const links = [
   { name: 'Platform', path: '/platform' },
   { name: 'Architecture', path: '/architecture' },
   { name: 'Research', path: '/research' },
+  { name: 'Documentation', path: '/docs' },
   { name: 'About', path: '/about' },
 ];
 

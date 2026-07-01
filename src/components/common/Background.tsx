@@ -23,7 +23,7 @@ export const Background = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivEleme
 
         {/* Low Opacity Dot Pattern */}
         <div 
-          className="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_40%,transparent_100%)] opacity-[0.1]"
+          className="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,#000_20%,transparent_100%)] opacity-[0.1]"
         />
       </div>
     );

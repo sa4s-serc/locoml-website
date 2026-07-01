@@ -6,11 +6,13 @@ import { ResponsiveHelper } from '@/components/common/ResponsiveHelper';
 import { Playground } from '@/pages/Playground';
 
 import { Hero } from '@/components/sections/Hero';
+import { WhySection } from '@/components/sections/why/WhySection';
 
 function Home() {
   return (
     <>
       <Hero />
+      <WhySection />
     </>
   );
 }

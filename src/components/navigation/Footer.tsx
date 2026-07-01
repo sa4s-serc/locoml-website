@@ -23,16 +23,16 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-paragraph">
               <li><Link to="/platform" className="hover:text-primary transition-colors">Features</Link></li>
               <li><Link to="/architecture" className="hover:text-primary transition-colors">Architecture</Link></li>
-              <li><Link to="/pricing" className="hover:text-primary transition-colors">Pricing</Link></li>
+              <li><Link to="/docs" className="hover:text-primary transition-colors">Documentation</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-4 font-heading font-semibold text-heading">Resources</h4>
+            <h4 className="mb-4 font-heading font-semibold text-heading">Research</h4>
             <ul className="space-y-2 text-sm text-paragraph">
-              <li><Link to="/docs" className="hover:text-primary transition-colors">Documentation</Link></li>
-              <li><Link to="/research" className="hover:text-primary transition-colors">Research</Link></li>
-              <li><Link to="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
+              <li><Link to="/paper" className="hover:text-primary transition-colors">Paper</Link></li>
+              <li><Link to="/publications" className="hover:text-primary transition-colors">Publications</Link></li>
+              <li><Link to="/roadmap" className="hover:text-primary transition-colors">Roadmap</Link></li>
             </ul>
           </div>
 
@@ -41,6 +41,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-paragraph">
               <li><Link to="/about" className="hover:text-primary transition-colors">About</Link></li>
               <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">GitHub <Icons.ExternalLink className="h-3 w-3" /></a></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>

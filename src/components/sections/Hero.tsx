@@ -15,39 +15,45 @@ export function Hero() {
           <div className="flex flex-col items-start text-left">
             <FadeUp delay={0.1}>
               <h1 className="max-w-3xl lg:max-w-4xl text-heading pr-4 lg:pr-8">
-                The Operating System for Autonomous Machine Learning
+                Build. Train. Deploy.<br />
+                <span className="text-primary">One Platform.</span>
               </h1>
             </FadeUp>
             
             <FadeUp delay={0.2}>
               <p className="mt-6 max-w-xl text-lg text-paragraph md:text-xl leading-relaxed">
-                The foundational layer for modern machine learning. Build, validate, and deploy intelligent systems with deterministic reliability.
+                Design visual pipelines, build intelligent models, validate workflows, and deploy production-ready machine learning systems from one unified open source platform.
               </p>
             </FadeUp>
 
             <FadeUp delay={0.3} className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Button size="xl" className="w-full sm:w-auto font-medium">
+              <Button size="xl" className="w-full sm:w-auto font-medium hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/20 transition-all">
                 Explore Platform
               </Button>
-              <Button size="xl" variant="outline" className="w-full sm:w-auto font-medium">
+              <Button size="xl" variant="outline" className="w-full sm:w-auto font-medium hover:-translate-y-0.5 hover:bg-slate-50 transition-all">
                 Read Research <Icons.ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </FadeUp>
 
             <FadeUp delay={0.4} className="mt-12 flex flex-wrap items-center gap-3">
-              <Tag className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1">Semantic Validation</Tag>
-              <Tag className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1">Autonomous Resolver</Tag>
-              <Tag className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1">Pipeline Intelligence</Tag>
+              <Tag className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1 hover:border-slate-300 hover:text-slate-500 transition-colors cursor-default">Open Source</Tag>
+              <Tag className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1 hover:border-slate-300 hover:text-slate-500 transition-colors cursor-default">Visual Pipelines</Tag>
+              <Tag className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1 hover:border-slate-300 hover:text-slate-500 transition-colors cursor-default">Autonomous Resolver</Tag>
+              <Tag className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1 hover:border-slate-300 hover:text-slate-500 transition-colors cursor-default">Stress Testing</Tag>
+              <Tag className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1 hover:border-slate-300 hover:text-slate-500 transition-colors cursor-default">Adaptive Routing</Tag>
             </FadeUp>
           </div>
 
           {/* Right Column: Video Demonstration */}
           <div className="relative w-full">
+            {/* Soft Breathing Blue Glow */}
+            <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full animate-pulse-subtle" />
+            
             <FadeIn delay={0.5}>
-              <div className="relative mx-auto w-full max-w-2xl rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl shadow-slate-200/50">
-                <div className="mb-2 flex items-center justify-between px-2 pt-1">
-                  <span className="font-mono text-[11px] uppercase tracking-wider font-semibold text-slate-400 flex items-center gap-2">
-                    <Icons.Monitor className="h-3 w-3" /> LoCoML Platform Preview
+              <div className="relative mx-auto w-full max-w-2xl rounded-3xl border border-white/40 bg-white/60 backdrop-blur-md p-2 shadow-[0_0_60px_-15px_rgba(37,99,235,0.15)] animate-float">
+                <div className="mb-2 flex items-center justify-between px-3 pt-2">
+                  <span className="font-mono text-[11px] uppercase tracking-wider font-semibold text-slate-500 flex items-center gap-2">
+                    <Icons.Monitor className="h-3 w-3 text-primary/80" /> Product Preview
                   </span>
                 </div>
                 
@@ -55,11 +61,11 @@ export function Hero() {
                   src="" 
                   poster=""
                   aspectRatio="16/9" 
-                  rounded="lg" 
-                  className="w-full border border-slate-100"
+                  rounded="2xl" 
+                  className="w-full border border-slate-100 bg-white"
                 />
                 
-                <div className="mt-3 flex items-center justify-between px-2 pb-1">
+                <div className="mt-3 flex items-center justify-between px-3 pb-2">
                   <span className="font-mono text-[10px] uppercase tracking-wider text-slate-400">2:45 Product Overview</span>
                 </div>
               </div>
