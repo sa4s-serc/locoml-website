@@ -53,15 +53,16 @@ export function Navbar() {
       )}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 md:px-8">
-        <Link to="/" className="flex items-center gap-2">
-          {/* Logo Placeholder */}
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
-            <Icons.Layers className="h-5 w-5" />
-          </div>
-          <span className="font-heading text-xl font-bold text-heading">LoCoML</span>
-        </Link>
+        <div className="flex items-center gap-12 lg:gap-16">
+          <Link to="/" className="flex items-center gap-2">
+            {/* Logo Placeholder */}
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+              <Icons.Layers className="h-5 w-5" />
+            </div>
+            <span className="font-heading text-xl font-bold text-heading">LoCoML</span>
+          </Link>
 
-        {/* Desktop Navigation */}
+          {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
             <Link
@@ -76,6 +77,7 @@ export function Navbar() {
             </Link>
           ))}
         </nav>
+        </div>
 
         <div className="hidden items-center gap-4 md:flex">
           <a

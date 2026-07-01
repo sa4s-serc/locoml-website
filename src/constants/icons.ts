@@ -19,7 +19,9 @@ import {
   Lock,
   Search,
   Shield,
-  Zap
+  Zap,
+  Monitor,
+  ChevronDown
 } from 'lucide-react';
 
 export const Icons = {
@@ -44,4 +46,6 @@ export const Icons = {
   Search,
   Shield,
   Zap,
+  Monitor,
+  ChevronDown,
 };
