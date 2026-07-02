@@ -15,8 +15,8 @@ const PATH_CORE_1 = "M 350 160 L 350 300";
 const PATH_CORE_2 = "M 350 300 L 350 440";
 const PATH_CORE_3 = "M 350 440 L 350 580";
 
-const PATH_ADAPTIVE = "M 350 580 L 350 640 Q 350 670 320 670 L 250 670 Q 220 670 220 700";
-const PATH_STITCH   = "M 350 580 L 350 640 Q 350 670 380 670 L 450 670 Q 480 670 480 700";
+const PATH_ADAPTIVE = "M 350 580 L 350 640 Q 350 670 320 670 L 210 670 Q 180 670 180 700";
+const PATH_ADAPTIVE_IN = "M 180 700 L 245 700 Q 275 700 275 670 L 275 610 Q 275 580 305 580 L 350 580";
 const PATH_CORE_FULL = "M 350 160 L 350 580"; // For the static background connector
 
 export function PlatformIntelligenceSection() {
@@ -24,6 +24,7 @@ export function PlatformIntelligenceSection() {
   const isInView = useInView(containerRef, { margin: '-100px' });
   
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [warningId, setWarningId] = useState<string | null>(null);
   const [activeBranch, setActiveBranch] = useState<string | null>(null);
   
   const [dotConfig, setDotConfig] = useState({
@@ -44,8 +45,8 @@ export function PlatformIntelligenceSection() {
       ready: 400,
       resolver: 1400,
       deploy: 1200,
-      running: 900,
-      adaptive: 950,
+      running: 1500,
+      adaptive: 700,
       stitch: 1100
     };
 
@@ -87,11 +88,10 @@ export function PlatformIntelligenceSection() {
     const runSequence = async () => {
       const entryId = Math.random() > 0.5 ? 'builder' : 'llm';
       const entryPath = entryId === 'builder' ? PATH_MANUAL : PATH_LLM;
-      const exitId = Math.random() > 0.5 ? 'adaptive' : 'stitch';
-      const exitPath = exitId === 'adaptive' ? PATH_ADAPTIVE : PATH_STITCH;
 
       // Reset states
       setActiveBranch(null);
+      setWarningId(null);
       setDotConfig({ path: '', progress: 0, opacity: 0, traveling: false });
       await wait(500); // Initial pause
 
@@ -106,26 +106,46 @@ export function PlatformIntelligenceSection() {
       await travel(PATH_CORE_1, 21, 62);
       await processNode('resolver');
       
-      // 4. Travel to Deploy
+      // 4. Travel to Stitch Model (formerly deploy)
       await travel(PATH_CORE_2, 38, 73);
       await processNode('deploy');
       
-      // 5. Travel to Running
+      // 5. Travel to Running Pipeline
       await travel(PATH_CORE_3, 27, 61);
-      await processNode('running');
       
-      // 6. Highlight active exit branch and travel
       if (!isActive) return;
-      setActiveBranch(exitId);
-      await travel(exitPath, 24, 87);
+      setActiveId('running');
+      await wait(1500); // Run healthy
       
-      // 7. Exit Node processes
-      await processNode(exitId);
-
-      // Reset branch highlight and wait before next cycle
+      if (!isActive) return;
+      // Simulate Degradation
+      setActiveId(null);
+      setWarningId('running');
+      await wait(300);
+      
+      if (!isActive) return;
+      setWarningId(null);
+      
+      // 6. Travel to Adaptive Routing
+      setActiveBranch('adaptive');
+      await travel(PATH_ADAPTIVE, 10, 90);
+      
+      // 7. Process Adaptive Routing
+      await processNode('adaptive');
+      
+      // 8. Travel back to Running Pipeline
+      await travel(PATH_ADAPTIVE_IN, 10, 90);
+      
+      // 9. Back to normal Running
       if (!isActive) return;
       setActiveBranch(null);
-      await wait(1200);
+      setActiveId('running');
+      await wait(1000);
+      setActiveId(null);
+
+      // Wait before next cycle
+      if (!isActive) return;
+      await wait(800);
 
       if (isActive && isInView) {
         runSequence();
@@ -136,6 +156,7 @@ export function PlatformIntelligenceSection() {
       runSequence();
     } else {
       setActiveId(null);
+      setWarningId(null);
       setActiveBranch(null);
       setDotConfig({ path: '', progress: 0, opacity: 0, traveling: false });
     }
@@ -143,6 +164,7 @@ export function PlatformIntelligenceSection() {
     return () => {
       isActive = false;
       setActiveId(null);
+      setWarningId(null);
       setActiveBranch(null);
     };
   }, [isInView]);
@@ -183,10 +205,10 @@ export function PlatformIntelligenceSection() {
                   className="transition-colors duration-500"
                 />
                 
-                {/* Stitch Branch (Highlights if active) */}
+                {/* Adaptive Return Branch (Highlights if active) */}
                 <path 
-                  d={PATH_STITCH} 
-                  stroke={activeBranch === 'stitch' ? "#2563eb" : "#e2e8f0"} 
+                  d={PATH_ADAPTIVE_IN} 
+                  stroke={activeBranch === 'adaptive' ? "#2563eb" : "#e2e8f0"} 
                   strokeWidth={1} 
                   fill="none" strokeLinecap="round" strokeLinejoin="round" 
                   className="transition-colors duration-500"
@@ -227,10 +249,9 @@ export function PlatformIntelligenceSection() {
               <LLMNode       id="llm"      activeId={activeId} x={450} y={60}  w={48}  h={48}  label="Pipeline LLM"    labelPosition="right" />
               <PillNode      id="ready"    activeId={activeId} x={350} y={160} w={140} h={40}  label="Pipeline Ready" />
               <ResolverNode  id="resolver" activeId={activeId} x={350} y={300} w={88}  h={88}  label="Resolver"        labelPosition="left" />
-              <DeployNode    id="deploy"   activeId={activeId} x={350} y={440} w={56}  h={56}  label="Deployment"      labelPosition="left" />
-              <RunningNode   id="running"  activeId={activeId} x={350} y={580} w={90}  h={90}  label="Running Pipeline" labelPosition="left" />
-              <AdaptiveNode  id="adaptive" activeId={activeId} x={220} y={700} w={190} h={40}  label="Adaptive Routing" />
-              <StitchNode    id="stitch"   activeId={activeId} x={480} y={700} w={170} h={40}  label="Stitch Model" />
+              <DeployNode    id="deploy"   activeId={activeId} x={350} y={440} w={56}  h={56}  label="Stitch Model"    labelPosition="left" />
+              <RunningNode   id="running"  activeId={activeId} warning={warningId === 'running'} x={350} y={580} w={90}  h={90}  label="Running Pipeline" labelPosition="left" />
+              <AdaptiveNode  id="adaptive" activeId={activeId} x={180} y={700} w={190} h={40}  label="Adaptive Routing" />
             </div>
           </div>
 
@@ -558,19 +579,19 @@ function DeployNode({ id, activeId, x, y, w, h, label, labelPosition }: any) {
 
 /* ─── 6. Running Pipeline Node ──────────────────────────────────────── */
 // Implements execution animation: Play Icon Translation & Scale
-function RunningNode({ id, activeId, x, y, w, h, label, labelPosition }: any) {
+function RunningNode({ id, activeId, warning, x, y, w, h, label, labelPosition }: any) {
   const isActive = activeId === id;
-  const [phase, setPhase] = useState<'idle' | 'active'>('idle');
+  const [phase, setPhase] = useState<'idle' | 'active' | 'warning'>('idle');
 
   useEffect(() => {
-    if (isActive) {
+    if (warning) {
+      setPhase('warning');
+    } else if (isActive) {
       setPhase('active');
-      const t = setTimeout(() => setPhase('idle'), 900); // Reset at end of cycle
-      return () => clearTimeout(t);
     } else {
       setPhase('idle');
     }
-  }, [isActive]);
+  }, [isActive, warning]);
 
   return (
     <NodeWrapper x={x} y={y} w={w} h={h}>
@@ -580,21 +601,32 @@ function RunningNode({ id, activeId, x, y, w, h, label, labelPosition }: any) {
         {/* Main Node */}
         <motion.div
           className="flex items-center justify-center w-full h-full rounded-full border-[1.5px] bg-white relative z-10 overflow-hidden"
-          animate={phase === 'active' ? { borderColor: '#2563eb' } : { borderColor: '#e2e8f0' }}
+          animate={
+            phase === 'warning' ? { borderColor: '#f59e0b' } :
+            phase === 'active' ? { borderColor: '#2563eb' } : 
+            { borderColor: '#e2e8f0' }
+          }
           transition={{ duration: 0.2 }}
         >
           <motion.div
             className="flex items-center justify-center"
             animate={
-              phase === 'active' 
+              phase === 'warning'
+                ? { scale: [1, 1.05, 1], x: 0, color: '#f59e0b' }
+                : phase === 'active' 
                 ? { scale: [1, 1.08, 1], x: [0, 2, 0], color: '#2563eb' } 
                 : { scale: 1, x: 0, color: '#94a3b8' }
             }
             transition={
-              phase === 'active' 
+              phase === 'warning'
+                ? {
+                    scale: { duration: 0.8, ease: "easeInOut", repeat: Infinity },
+                    color: { duration: 0.2 }
+                  }
+                : phase === 'active' 
                 ? { 
-                    scale: { duration: 0.45, ease: [0.22, 1, 0.36, 1], times: [0, 0.5, 1] },
-                    x: { duration: 0.45, ease: [0.22, 1, 0.36, 1], times: [0, 0.5, 1] },
+                    scale: { duration: 1.5, ease: "easeInOut", repeat: Infinity },
+                    x: { duration: 1.5, ease: "easeInOut", repeat: Infinity },
                     color: { duration: 0.2 }
                   } 
                 : { duration: 0.3 }
