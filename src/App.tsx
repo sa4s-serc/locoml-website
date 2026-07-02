@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Navbar } from '@/components/navigation/Navbar';
 import { Background } from '@/components/common/Background';
 import { ResponsiveHelper } from '@/components/common/ResponsiveHelper';
+import { ScrollToTop } from '@/components/common/ScrollToTop';
 import { Playground } from '@/pages/Playground';
 import { Platform } from '@/pages/Platform';
 
@@ -27,6 +28,7 @@ function Home() {
 function App() {
   return (
     <div className="relative flex min-h-screen flex-col">
+      <ScrollToTop />
       <Background />
       <Navbar />
       <main className="flex-1">
