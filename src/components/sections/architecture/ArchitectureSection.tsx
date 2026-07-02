@@ -19,7 +19,7 @@ export function ArchitectureSection() {
           {/* Section Introduction */}
           <div className="mb-20 flex flex-col items-center text-center">
             <FadeUp>
-              <Tag className="mb-6">PLATFORM OVERVIEW</Tag>
+              <Tag className="mb-6">LAYERS</Tag>
             </FadeUp>
             
             <FadeUp delay={0.1}>

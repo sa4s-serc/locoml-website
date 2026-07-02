@@ -119,8 +119,8 @@ export const architectureConfig = {
           },
           { 
             id: 'ie-auto-3', 
-            label: 'Pipeline Copy / Paste Engine',
-            description: 'Enables instant extraction, sharing, and reinjection of pipeline fragments.'
+            label: 'Pipeline Portability',
+            description: 'Enables instant extraction, sharing, and seamless reuse of pipeline components across projects and environments.'
           },
         ],
       },
