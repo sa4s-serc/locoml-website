@@ -1,7 +1,7 @@
 import { PlatformHero } from '@/components/platform/PlatformHero';
 import { PlatformOverview } from '@/components/platform/PlatformOverview';
 import { PlatformIntelligenceSection } from '@/components/platform/PlatformIntelligenceSection';
-import { AutonomousModulesSection } from '@/components/platform/AutonomousModulesSection';
+import { PlatformExperienceSection } from '@/components/platform/PlatformExperienceSection';
 import { PlatformHighlights } from '@/components/platform/PlatformHighlights';
 
 export function Platform() {
@@ -10,7 +10,7 @@ export function Platform() {
       <PlatformHero />
       <PlatformOverview />
       <PlatformIntelligenceSection />
-      <AutonomousModulesSection />
+      <PlatformExperienceSection />
       <PlatformHighlights />
     </>
   );
