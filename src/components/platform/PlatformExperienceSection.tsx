@@ -54,7 +54,7 @@ export function PlatformExperienceSection() {
   const selectedItem = SHOWCASE_ITEMS.find(item => item.id === selectedId);
 
   return (
-    <section className="relative w-full pt-24 pb-[120px] bg-white overflow-hidden">
+    <section className="relative w-full pt-24 pb-[24px] bg-white overflow-hidden">
       <Container>
         <motion.div
           initial="hidden"
