@@ -19,18 +19,18 @@ export function ArchitectureSection() {
           {/* Section Introduction */}
           <div className="mb-20 flex flex-col items-center text-center">
             <FadeUp>
-              <Tag className="mb-6">ARCHITECTURE</Tag>
+              <Tag className="mb-6">PLATFORM OVERVIEW</Tag>
             </FadeUp>
             
             <FadeUp delay={0.1}>
               <h2 className="text-3xl font-bold tracking-tight text-heading sm:text-4xl md:text-5xl leading-[1.1] max-w-3xl mx-auto">
-                Understanding the Intelligence Behind LoCoML
+                A unified platform built in layers.
               </h2>
             </FadeUp>
             
             <FadeUp delay={0.2} className="mt-8">
               <p className="max-w-2xl text-lg text-paragraph leading-relaxed">
-                Every machine learning workflow passes through a centralized intelligence engine before execution. Explore the system blueprint below.
+                Every capability inside LoCoML is organized into independent platform layers, allowing workflows to be generated, validated, optimized and deployed through a unified system.
               </p>
             </FadeUp>
           </div>

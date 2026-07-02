@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/Button';
 const links = [
   { name: 'Home', path: '/' },
   { name: 'Platform', path: '/platform' },
-  { name: 'Architecture', path: '/architecture' },
   { name: 'Research', path: '/research' },
   { name: 'Documentation', path: '/docs' },
   { name: 'About', path: '/about' },
@@ -53,34 +52,34 @@ export function Navbar() {
           : 'bg-transparent py-5'
       )}
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 md:px-8">
-        <div className="flex items-center gap-12 lg:gap-16">
-          <Link to="/" className="flex items-center gap-2">
-            {/* Logo Placeholder */}
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
-              <Icons.Layers className="h-5 w-5" />
-            </div>
-            <span className="font-heading text-xl font-bold text-heading">LoCoML</span>
-          </Link>
+      <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-4 md:px-8">
+        <Link to="/" className="flex items-center gap-2 relative z-10">
+          {/* Logo Placeholder */}
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+            <Icons.Layers className="h-5 w-5" />
+          </div>
+          <span className="font-heading text-xl font-bold text-heading">LoCoML</span>
+        </Link>
 
-          {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-8 md:flex">
-          {links.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={cn(
-                'text-sm font-medium transition-colors hover:text-primary',
-                location.pathname === link.path ? 'text-primary' : 'text-paragraph'
-              )}
-            >
-              {link.name}
-            </Link>
-          ))}
+        {/* Desktop Navigation - Centered */}
+        <nav className="hidden md:flex absolute inset-x-0 items-center justify-center gap-8 pointer-events-none">
+          <div className="flex items-center gap-8 pointer-events-auto">
+            {links.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={cn(
+                  'text-sm font-medium transition-colors hover:text-primary',
+                  location.pathname === link.path ? 'text-primary' : 'text-paragraph'
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
         </nav>
-        </div>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-4 md:flex relative z-10">
           <a
             href="https://github.com"
             target="_blank"
