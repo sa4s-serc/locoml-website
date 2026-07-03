@@ -6,8 +6,8 @@ export function About() {
   return (
     <>
       <AboutHero />
-      <ResearchFoundation />
       <TeamSection />
+      <ResearchFoundation />
     </>
   );
 }
