@@ -31,7 +31,7 @@ export function FoundationNode({ data }: FoundationNodeProps) {
       <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest mb-3">
         {data.label}
       </span>
-      <h3 className="text-[22px] md:text-[26px] font-bold text-slate-900 whitespace-pre-line leading-snug">
+      <h3 className="text-[22px] md:text-[26px] font-medium text-slate-900 whitespace-pre-line leading-snug">
         {data.title}
       </h3>
     </motion.div>
