@@ -1,27 +1,42 @@
 import { Container } from '@/components/layout/Layout';
 import { Tag } from '@/components/ui/TypographyAndBadges';
 import { motion } from 'framer-motion';
+import { SemanticGraphBackground, SemanticSignal } from './SemanticGraph';
 
 export function AboutHero() {
   return (
     <section className="relative flex flex-col items-center justify-center pt-[120px] pb-[140px] overflow-hidden bg-white">
-      
-      {/* Subtle Blueprint Background (2% opacity) */}
-      <div className="absolute inset-0 z-0 pointer-events-none select-none opacity-[0.02] text-slate-900 flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)',
-            backgroundSize: '40px 40px'
-          }}
-        />
-        {/* Faint ambient pulse */}
-        <motion.div 
-          className="w-1.5 h-1.5 bg-currentColor rounded-full"
-          animate={{ x: [-200, 200, -200], y: [-100, 100, -100], opacity: [0, 0.5, 0] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        />
+
+      {/* Layer 0 – Static graph (permanent, no opacity animation) */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          opacity: 0.28,
+          zIndex: 0,
+          pointerEvents: 'none',
+          overflow: 'hidden',
+        }}
+      >
+        <SemanticGraphBackground />
       </div>
+
+      {/* Layer 1 – Signal particle (independent, never re-renders graph) */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          opacity: 0.85,
+          zIndex: 1,
+          pointerEvents: 'none',
+        }}
+      >
+        <SemanticSignal />
+      </div>
+
+
 
       <Container className="relative z-10 w-full flex flex-col items-center justify-center text-center">
         
@@ -47,38 +62,7 @@ export function AboutHero() {
           Autonomous Machine Learning.
         </motion.h1>
 
-        {/* Step 3: Description */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="flex flex-col items-center text-center mb-14 mx-auto max-w-[760px]"
-        >
-          {/* Group 1 */}
-          <span className="text-lg text-slate-500 font-medium tracking-wide mb-2">
-            LoCoML is a research-driven framework developed at
-          </span>
 
-          {/* Group 2 */}
-          <div className="flex flex-col items-center text-slate-500 leading-snug mb-3">
-            <span className="text-base md:text-lg">
-              Software Engineering Research Centre (SERC)<br />
-              IIIT Hyderabad
-            </span>
-          </div>
-
-          {/* Group 3 */}
-          <div className="flex flex-col items-center text-slate-500 leading-snug">
-            <span className="text-sm text-slate-400 uppercase tracking-widest font-semibold mb-1">
-              under the
-            </span>
-            <span className="text-base md:text-lg">
-              Software Architecture for Sustainable and<br className="hidden sm:block" />
-              Self-Adaptive Software Systems (SA4S)<br className="hidden sm:block" />
-              Research Group
-            </span>
-          </div>
-        </motion.div>
 
         {/* Step 4: Research Pillars */}
         <div className="w-full max-w-[900px] mx-auto flex flex-col md:flex-row items-center justify-center relative">
