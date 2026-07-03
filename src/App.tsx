@@ -7,6 +7,7 @@ import { Playground } from '@/pages/Playground';
 import { Platform } from '@/pages/Platform';
 import { Research } from '@/pages/Research';
 import { UseCases } from '@/pages/UseCases';
+import { About } from '@/pages/About';
 
 import { Hero } from '@/components/sections/Hero';
 import { WhySection } from '@/components/sections/why/WhySection';
@@ -39,6 +40,7 @@ function App() {
           <Route path="/platform" element={<Platform />} />
           <Route path="/research" element={<Research />} />
           <Route path="/use-cases" element={<UseCases />} />
+          <Route path="/about" element={<About />} />
           <Route path="/internal/playground" element={<Playground />} />
           {/* Other routes will be implemented in subsequent phases */}
           <Route path="*" element={<Home />} />
