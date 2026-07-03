@@ -2,23 +2,26 @@ import React from 'react';
 import { Container } from '@/components/layout/Layout';
 import { teamData } from './teamData';
 import { TeamGroup } from './TeamGroup';
+import { Tag } from '@/components/ui/TypographyAndBadges';
+import { motion } from 'framer-motion';
 
 export function TeamSection() {
   return (
     <section className="relative py-24 md:py-32 bg-white overflow-hidden border-t border-slate-100">
-      
-      {/* Subtle Blueprint Background (2% opacity) to match Hero */}
-      <div className="absolute inset-0 z-0 pointer-events-none select-none opacity-[0.02] text-slate-900 flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)',
-            backgroundSize: '40px 40px'
-          }}
-        />
-      </div>
-
       <Container className="relative z-10 w-full flex flex-col items-center">
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="mb-5 md:mb-6"
+        >
+          <Tag className="border border-slate-200 bg-white px-3 py-1 text-xs font-mono tracking-wider">
+            TEAM
+          </Tag>
+        </motion.div>
+
         <TeamGroup 
           title="Faculty Advisor" 
           members={teamData.faculty} 

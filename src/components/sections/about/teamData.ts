@@ -17,7 +17,7 @@ export const teamData: TeamData = {
   faculty: [
     {
       id: 'karthik',
-      name: 'Prof. Karthik Vaidhyanathan',
+      name: 'Dr. Karthik Vaidhyanathan',
       role: 'Faculty Advisor',
       institution: 'Software Engineering Research Centre (SERC)\nIIIT Hyderabad',
       photo: null,
