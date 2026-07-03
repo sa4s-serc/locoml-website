@@ -3,7 +3,7 @@ export interface Contributor {
   name: string;
   role: string;
   photo: string | null;
-  institution?: string; // e.g., for Faculty Advisor
+  institution?: string;
 }
 
 export interface TeamData {
@@ -20,7 +20,7 @@ export const teamData: TeamData = {
       name: 'Dr. Karthik Vaidhyanathan',
       role: 'Faculty Advisor',
       institution: 'Software Engineering Research Centre (SERC)\nIIIT Hyderabad',
-      photo: null,
+      photo: '/team/karthik-vaidhyanathan.jpg',
     },
   ],
   researchTeam: [
@@ -28,19 +28,19 @@ export const teamData: TeamData = {
       id: 'chandrasekar',
       name: 'Chandrasekar S',
       role: "Master's Student",
-      photo: null,
+      photo: '/team/chandrasekar-s.jpg',
     },
     {
       id: 'kritin',
-      name: 'Maddireddy Kritin',
+      name: 'Kritin Maddireddy',
       role: 'Honours Student',
-      photo: null,
+      photo: '/team/maddireddy-kritin.jpg',
     },
     {
       id: 'santhosh',
-      name: 'Kotekal Methukula Santhosh',
+      name: 'Santhosh Kotekal Methukula',
       role: 'Honours Student',
-      photo: null,
+      photo: '/team/kotekal-santhosh.jpg',
     },
   ],
   btechStudents: [
@@ -48,49 +48,49 @@ export const teamData: TeamData = {
       id: 'nijesh',
       name: 'Nijesh Raghava',
       role: 'B.Tech Student',
-      photo: null,
+      photo: null, // → /team/nijesh-raghava.jpg
     },
     {
       id: 'vamseedhar',
       name: 'Varanasi Vamseedhar',
       role: 'B.Tech Student',
-      photo: null,
+      photo: null, // → /team/varanasi-vamseedhar.jpg
     },
     {
       id: 'ayush',
       name: 'Ayush Agarwal',
       role: 'B.Tech Student',
-      photo: null,
+      photo: null, // → /team/ayush-agarwal.jpg
     },
     {
       id: 'siddharth',
       name: 'Siddharth Mavani',
       role: 'B.Tech Student',
-      photo: null,
+      photo: '/team/siddharth-mavani.jpg',
     },
     {
       id: 'rohan',
       name: 'Rohan C',
       role: 'B.Tech Student',
-      photo: null,
+      photo: null, // → /team/rohan-c.jpg
     },
     {
       id: 'harshit',
       name: 'Harshit Karwal',
       role: 'B.Tech Student',
-      photo: null,
+      photo: '/team/harshit-karwal.jpg',
     },
     {
       id: 'mukta',
       name: 'Mukta Chanda',
       role: 'B.Tech Student',
-      photo: null,
+      photo: '/team/mukta-chanda.jpg',
     },
     {
       id: 'shashwat',
       name: 'Shashwat Dash',
       role: 'B.Tech Student',
-      photo: null,
+      photo: '/team/shashwat-dash.jpg',
     },
   ],
   interns: [
@@ -98,13 +98,13 @@ export const teamData: TeamData = {
       id: 'sanjay',
       name: 'Sanjay J',
       role: 'Intern',
-      photo: null,
+      photo: '/team/sanjay-j.jpg',
     },
     {
       id: 'shelvaaathithyan',
       name: 'Shelvaaathithyan VK',
       role: 'Intern',
-      photo: null,
+      photo: '/team/shelvaaathithyan-vk.jpg',
     },
   ],
 };
