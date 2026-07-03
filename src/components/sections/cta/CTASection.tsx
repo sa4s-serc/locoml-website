@@ -42,18 +42,11 @@ export function CTASection() {
             </p>
           </FadeUp>
           
-          <FadeUp delay={0.3} className="flex flex-col sm:flex-row items-center gap-6">
+          <FadeUp delay={0.3} className="flex justify-center">
             <Button size="lg" className="h-14 px-8 text-base">
               Get Started
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            
-            <a 
-              href="#" 
-              className="text-base font-medium text-slate-600 hover:text-slate-900 transition-colors px-6 py-4"
-            >
-              View Documentation
-            </a>
           </FadeUp>
           
         </div>

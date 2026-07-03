@@ -33,10 +33,10 @@ export function TeamCard({ contributor, isLarge = false }: TeamCardProps) {
         {contributor.photo ? (
           <img src={contributor.photo} alt={contributor.name} className="w-full h-full object-cover" />
         ) : (
-          <div className="w-full h-full bg-slate-50 flex items-center justify-center text-slate-300">
-            <svg className={cn(isLarge ? "w-12 h-12" : "w-8 h-8", "opacity-50")} fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
+          <div className="w-full h-full bg-slate-50 flex items-center justify-center text-slate-400 font-semibold bg-gradient-to-br from-slate-50 to-slate-100">
+            <span className={cn(isLarge ? "text-4xl" : "text-3xl")}>
+              {contributor.name.charAt(0)}
+            </span>
           </div>
         )}
       </div>
