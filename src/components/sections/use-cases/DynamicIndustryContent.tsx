@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { industryData } from '@/config/industryData';
 
@@ -7,7 +7,6 @@ import { WorkflowVisualization } from './WorkflowVisualization';
 import { TraditionalVsLoCoML } from './TraditionalVsLoCoML';
 import { ChallengeGrid } from './ChallengeGrid';
 import { SolutionGrid } from './SolutionGrid';
-import { ImpactMetrics } from './ImpactMetrics';
 import { ExploreAnotherIndustry } from './ExploreAnotherIndustry';
 
 interface DynamicIndustryContentProps {
@@ -15,15 +14,41 @@ interface DynamicIndustryContentProps {
   onIndustrySelect: (id: string) => void;
 }
 
+// A simple helper component to detect when the new DOM tree has actually mounted
+function ContentMountTrigger({ onMount }: { onMount: () => void }) {
+  useEffect(() => {
+    onMount();
+  }, [onMount]);
+  return null;
+}
+
 export function DynamicIndustryContent({ selectedIndustry, onIndustrySelect }: DynamicIndustryContentProps) {
   const data = industryData[selectedIndustry];
   const containerRef = useRef<HTMLDivElement>(null);
+  const [scrollPendingFor, setScrollPendingFor] = useState<string | null>(null);
 
   const handleBottomSelect = (id: string) => {
+    if (id === selectedIndustry) return;
+    setScrollPendingFor(id);
     onIndustrySelect(id);
-    if (containerRef.current) {
-      const topOffset = containerRef.current.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({ top: topOffset, behavior: 'smooth' });
+  };
+
+  const handleContentMount = () => {
+    if (scrollPendingFor === selectedIndustry) {
+      // Small delay to ensure browser paints the new DOM elements correctly before measuring
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          if (containerRef.current) {
+            const NAVBAR_HEIGHT = 80;
+            const SPACING = 32;
+            const elementTop = containerRef.current.getBoundingClientRect().top + window.scrollY;
+            const targetPosition = elementTop - NAVBAR_HEIGHT - SPACING;
+            
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          }
+          setScrollPendingFor(null);
+        });
+      }, 50);
     }
   };
 
@@ -40,16 +65,17 @@ export function DynamicIndustryContent({ selectedIndustry, onIndustrySelect }: D
           transition={{ duration: 0.5, ease: 'easeInOut' }}
           className="flex flex-col gap-24 lg:gap-32 pt-16 lg:pt-24"
         >
+          <ContentMountTrigger onMount={handleContentMount} />
+          
           <IndustryOverview data={data} />
           <WorkflowVisualization data={data} />
           <TraditionalVsLoCoML data={data} />
           <ChallengeGrid data={data} />
           <SolutionGrid data={data} />
-          <ImpactMetrics data={data} />
         </motion.div>
       </AnimatePresence>
 
-      <div className="mt-32">
+      <div className="mt-24 lg:mt-32">
         <ExploreAnotherIndustry
           activeIndustry={selectedIndustry}
           onIndustrySelect={handleBottomSelect}

@@ -21,7 +21,6 @@ export interface IndustryConfig {
     title: string;
     description: string;
   }[];
-  impact: string[];
 }
 
 export const industryData: Record<string, IndustryConfig> = {
@@ -51,12 +50,6 @@ export const industryData: Record<string, IndustryConfig> = {
       { icon: 'puzzle', title: 'Model Compatibility', description: 'Seamlessly integrate with existing hospital systems.' },
       { icon: 'zap', title: 'Automatic Optimization', description: 'Continuously improve diagnostic accuracy.' },
     ],
-    impact: [
-      'Faster Clinical Pipelines',
-      'Reduced Engineering Effort',
-      'Reliable Validation',
-      'Reproducible Experiments',
-    ],
   },
   finance: {
     id: 'finance',
@@ -83,12 +76,6 @@ export const industryData: Record<string, IndustryConfig> = {
       { icon: 'check-circle', title: 'Semantic Verification', description: 'Mathematically verify model compliance.' },
       { icon: 'activity', title: 'Risk Monitoring', description: 'Real-time alerts for concept drift and anomalies.' },
       { icon: 'refresh-cw', title: 'Continuous Validation', description: 'Automated testing on live streaming data.' },
-    ],
-    impact: [
-      'Faster Fraud Detection',
-      'Lower Operational Cost',
-      'Continuous Monitoring',
-      'Scalable Deployment',
     ],
   },
   retail: {
@@ -117,12 +104,6 @@ export const industryData: Record<string, IndustryConfig> = {
       { icon: 'users', title: 'Recommendation Pipelines', description: 'Personalize user experiences at massive scale.' },
       { icon: 'bar-chart', title: 'Production Monitoring', description: 'Track forecasting accuracy in real-time.' },
     ],
-    impact: [
-      'Higher Forecast Accuracy',
-      'Reduced Inventory Waste',
-      'Better Recommendations',
-      'Faster Deployment',
-    ],
   },
   manufacturing: {
     id: 'manufacturing',
@@ -149,12 +130,6 @@ export const industryData: Record<string, IndustryConfig> = {
       { icon: 'alert-triangle', title: 'Fault Prediction', description: 'Identify anomalies before catastrophic failures occur.' },
       { icon: 'tool', title: 'Pipeline Self-Repair', description: 'Automatically handle missing or corrupted sensor signals.' },
       { icon: 'server', title: 'Deployment Automation', description: 'Push models directly to edge devices on the factory floor.' },
-    ],
-    impact: [
-      'Reduced Downtime',
-      'Predictive Maintenance',
-      'Fault Prevention',
-      'Automated Workflows',
     ],
   },
   agriculture: {
@@ -183,12 +158,6 @@ export const industryData: Record<string, IndustryConfig> = {
       { icon: 'git-merge', title: 'Prediction Pipelines', description: 'End-to-end workflows for accurate yield forecasting.' },
       { icon: 'eye', title: 'Continuous Monitoring', description: 'Track crop health metrics continuously.' },
     ],
-    impact: [
-      'Higher Crop Yield',
-      'Earlier Disease Detection',
-      'Optimized Irrigation',
-      'Resource Savings',
-    ],
   },
   'smart-cities': {
     id: 'smart-cities',
@@ -215,12 +184,6 @@ export const industryData: Record<string, IndustryConfig> = {
       { icon: 'link', title: 'IoT Integration', description: 'Seamlessly ingest data from diverse urban sensors.' },
       { icon: 'git-branch', title: 'Adaptive Workflows', description: 'Pipelines that automatically scale with data volume.' },
       { icon: 'box', title: 'Scalable Deployment', description: 'Deploy resilient ML models across decentralized networks.' },
-    ],
-    impact: [
-      'Better Traffic Flow',
-      'Energy Savings',
-      'Improved Public Services',
-      'Scalable Infrastructure',
     ],
   },
 };
