@@ -18,7 +18,7 @@ export const teamData: TeamData = {
     {
       id: 'karthik',
       name: 'Dr. Karthik Vaidhyanathan',
-      role: 'Faculty Advisor',
+      role: 'Assistant Professor',
       institution: 'Software Engineering Research Centre (SERC)\nIIIT Hyderabad',
       photo: '/team/karthik-vaidhyanathan.jpg',
     },
