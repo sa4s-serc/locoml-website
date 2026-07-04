@@ -69,7 +69,8 @@ export function Hero() {
                 "Stress Testing",
                 "Adaptive Routing",
                 "Stitch Model",
-                "Pipeline LLM"
+                "Pipeline LLM",
+                "Pipeline Portability"
               ].map((badge) => (
                 <Tag 
                   key={badge} 
