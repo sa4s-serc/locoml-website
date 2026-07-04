@@ -62,11 +62,22 @@ export function Hero() {
             </FadeUp>
 
             <FadeUp delay={0.4} className="mt-12 flex flex-wrap items-center gap-3">
-              <Tag className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1 hover:border-slate-300 hover:text-slate-500 transition-colors cursor-default">Open Source</Tag>
-              <Tag className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1 hover:border-slate-300 hover:text-slate-500 transition-colors cursor-default">Visual Pipelines</Tag>
-              <Tag className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1 hover:border-slate-300 hover:text-slate-500 transition-colors cursor-default">Autonomous Resolver</Tag>
-              <Tag className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1 hover:border-slate-300 hover:text-slate-500 transition-colors cursor-default">Stress Testing</Tag>
-              <Tag className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1 hover:border-slate-300 hover:text-slate-500 transition-colors cursor-default">Adaptive Routing</Tag>
+              {[
+                "Open Source",
+                "Visual Pipelines",
+                "Autonomous Resolver",
+                "Stress Testing",
+                "Adaptive Routing",
+                "Stitch Model",
+                "Pipeline LLM"
+              ].map((badge) => (
+                <Tag 
+                  key={badge} 
+                  className="bg-transparent border-slate-200/50 text-slate-400 text-xs px-2 py-1 hover:border-slate-300 hover:text-slate-500 transition-colors cursor-default"
+                >
+                  {badge}
+                </Tag>
+              ))}
             </FadeUp>
           </div>
 
