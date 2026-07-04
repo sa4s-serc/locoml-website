@@ -83,7 +83,7 @@ export function Navbar() {
           >
             <Icons.GitBranch className="h-5 w-5" />
           </a>
-          <Button size="sm">Get Started</Button>
+          <Button size="sm" onClick={() => window.open('https://locoml-deployed-8zaq.vercel.app/', '_blank', 'noopener,noreferrer')}>Get Started</Button>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -127,7 +127,7 @@ export function Navbar() {
                 <Icons.GitBranch className="h-5 w-5" />
                 <span className="font-medium text-sm">GitHub</span>
               </a>
-              <Button size="sm">Get Started</Button>
+              <Button size="sm" onClick={() => window.open('https://locoml-deployed-8zaq.vercel.app/', '_blank', 'noopener,noreferrer')}>Get Started</Button>
             </div>
           </nav>
         </div>

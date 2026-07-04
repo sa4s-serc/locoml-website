@@ -43,7 +43,7 @@ export function CTASection() {
           </FadeUp>
           
           <FadeUp delay={0.3} className="flex justify-center">
-            <Button size="lg" className="h-14 px-8 text-base">
+            <Button size="lg" className="h-14 px-8 text-base" onClick={() => window.open('https://locoml-deployed-8zaq.vercel.app/', '_blank', 'noopener,noreferrer')}>
               Get Started
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
