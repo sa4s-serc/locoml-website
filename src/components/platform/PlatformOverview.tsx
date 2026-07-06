@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, Variants } from 'framer-motion';
 import { Container } from '@/components/layout/Layout';
 import { Tag } from '@/components/ui/TypographyAndBadges';
 import { cn } from '@/utils/cn';
@@ -33,7 +33,7 @@ const PILLARS = [
 export function PlatformOverview() {
   const shouldReduceMotion = useReducedMotion();
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
     show: {
       opacity: 1,
@@ -47,7 +47,7 @@ export function PlatformOverview() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 12 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };

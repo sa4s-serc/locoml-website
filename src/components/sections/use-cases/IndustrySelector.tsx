@@ -55,7 +55,7 @@ interface IndustryCardProps {
   onSelect: (id: string) => void;
   dotX: MotionValue<number>;
   dotY: MotionValue<number>;
-  containerRef: React.RefObject<HTMLDivElement>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
   index: number;
 }
 
@@ -165,7 +165,7 @@ export function IndustrySelector({ activeIndustry, onIndustrySelect, isPrimary =
     dotY.set(targetRect.top - containerRect.top + y - OFFSET);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  useAnimationFrame((time, delta) => {
+  useAnimationFrame((_, delta) => {
     if (!containerRef.current || isTraveling.current) return;
 
     const targetEl = cardsRef.current[activeIndustry];
@@ -264,7 +264,7 @@ export function IndustrySelector({ activeIndustry, onIndustrySelect, isPrimary =
           return (
             <IndustryCard
               key={industry.id}
-              ref={(el) => (cardsRef.current[industry.id] = el)}
+              ref={(el) => { cardsRef.current[industry.id] = el; }}
               industry={industry}
               isActive={isActive}
               isTravelingTo={isTravelingToState}

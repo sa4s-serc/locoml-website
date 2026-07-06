@@ -1,21 +1,21 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, Variants } from 'framer-motion';
 import { Container } from '@/components/layout/Layout';
 import { Tag } from '@/components/ui/TypographyAndBadges';
 
 export function PlatformOutroSection() {
   const shouldReduceMotion = useReducedMotion();
 
-  const labelVariants = {
+  const labelVariants: Variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 12 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
 
-  const headingVariants = {
+  const headingVariants: Variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 16 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.1 } }
   };
 
-  const textVariants = {
+  const textVariants: Variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 16 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.18 } }
   };

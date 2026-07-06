@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion, Variants } from 'framer-motion';
 import { X } from 'lucide-react';
 import { Container } from '@/components/layout/Layout';
 import { Tag } from '@/components/ui/TypographyAndBadges';
@@ -42,7 +42,7 @@ export function PlatformExperienceSection() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const sectionEntrance = {
+  const sectionEntrance: Variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
     show: { 
       opacity: 1, 

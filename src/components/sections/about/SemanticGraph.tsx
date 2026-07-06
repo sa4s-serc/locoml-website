@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion, motionValue, animate } from 'framer-motion';
+import { motion, motionValue, animate, MotionValue } from 'framer-motion';
 
 // ─── 22 Nodes ────────────────────────────────────────────────────────────────
 const NODES = [
@@ -78,9 +78,9 @@ const sleep = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
 // ─── Traversal Engine ────────────────────────────────────────────────────────
 async function traversePath(
   path: number[],
-  sigX: ReturnType<typeof motionValue>,
-  sigY: ReturnType<typeof motionValue>,
-  sigScale: ReturnType<typeof motionValue> | null,
+  sigX: MotionValue<number>,
+  sigY: MotionValue<number>,
+  sigScale: MotionValue<number> | null,
   withTrail: boolean,
   cancelled: { v: boolean },
 ) {

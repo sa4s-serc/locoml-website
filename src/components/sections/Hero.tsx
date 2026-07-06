@@ -165,7 +165,7 @@ export function Hero() {
               role="dialog"
               aria-modal="true"
               aria-label="Product Preview Demo Video"
-              className="relative flex flex-col bg-slate-950 rounded-[28px] overflow-hidden w-[95vw] md:w-[75vw] max-w-[1100px] aspect-video border border-slate-800"
+              className="relative flex flex-col bg-slate-950 rounded-[28px] overflow-hidden w-[95%] md:w-[75%] max-w-[1100px] aspect-video border border-slate-800"
               style={{
                 boxShadow: "0 28px 80px rgba(0,0,0,0.6)",
               }}
