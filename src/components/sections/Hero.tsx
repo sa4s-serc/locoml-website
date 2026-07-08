@@ -114,7 +114,19 @@ export function Hero() {
                   {/* The thumbnail representation */}
                   <div className="relative w-full aspect-video rounded-2xl border border-slate-100 overflow-hidden bg-slate-50/80">
                     <div className="absolute inset-0 flex items-center justify-center bg-slate-50">
-                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:2rem_2rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] opacity-50" />
+                      <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:2rem_2rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] opacity-50" />
+                      <ResponsiveVideo 
+                        src="/Videos/Screen Recording 2026-07-07 111202.mp4" 
+                        poster=""
+                        autoPlay={true}
+                        loop={true}
+                        muted={true}
+                        controls={false}
+                        playsInline={true}
+                        aspectRatio="16/9" 
+                        rounded="none" 
+                        className="w-full h-full object-cover absolute inset-0 z-0 opacity-70"
+                      />
                     </div>
                     
                     {/* Hover Overlay */}
@@ -127,7 +139,7 @@ export function Hero() {
                   </div>
                   
                   <div className="mt-3 flex items-center justify-between px-3 pb-2">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-slate-400">2:45 Product Overview</span>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-slate-400">5:08 Product Overview</span>
                   </div>
                 </motion.div>
               </motion.div>
@@ -208,7 +220,7 @@ export function Hero() {
                 {/* 16:9 Video Area */}
                 <div className="w-full h-full bg-slate-950 flex items-center justify-center overflow-hidden">
                   <ResponsiveVideo 
-                    src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" 
+                    src="/Videos/Screen Recording 2026-07-07 111202.mp4" 
                     poster=""
                     autoPlay={true}
                     loop={true}
@@ -225,7 +237,7 @@ export function Hero() {
                 {/* Modal Footer Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 z-20 flex items-center justify-between p-6 bg-gradient-to-t from-black/70 via-black/40 to-transparent pointer-events-none opacity-0 group-hover/modal:opacity-100 transition-opacity duration-300">
                   <div className="px-3 py-1.5 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-[12px] font-mono text-white/90 shadow-sm">
-                    2:45 Demo
+                    5:08 Demo
                   </div>
                   <div className="h-8 w-8 flex items-center justify-center rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white/90 pointer-events-auto hover:bg-black/50 transition-colors cursor-pointer">
                     <Icons.Monitor size={14} />
