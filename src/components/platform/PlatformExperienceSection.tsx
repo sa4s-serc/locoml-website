@@ -12,10 +12,10 @@ const SHOWCASE_ITEMS = [
   { id: 'stress', num: '03', title: 'Stress Testing', duration: '0:41', description: 'Subject models to intense synthetic load to verify stability.', video: '/Videos/Stress Testing.mp4' },
   { id: 'portability', num: '04', title: 'Pipeline Portability', duration: '0:56', description: 'Export and deploy pipelines across diverse cloud environments.', video: '/Videos/Pipeline Portability.mp4' },
   { id: 'stitch', num: '05', title: 'Stitch Models', duration: '1:08', description: 'Combine multiple models to improve prediction quality.', video: '/Videos/Stitch Model.mp4' },
-  { id: 'routing', num: '06', title: 'Adaptive Routing', duration: '0:38', description: 'Redirects execution to better-performing models dynamically.' },
-  { id: 'dashboard', num: '07', title: 'Pipeline Dashboard', duration: '1:12', description: 'Real-time telemetry and execution monitoring for pipelines.' },
-  { id: 'inference', num: '08', title: 'Single Sample Inference', duration: '0:50', description: 'Test individual inputs against deployed models instantly.' },
-  { id: 'management', num: '09', title: 'Delete Model', duration: '0:44', description: 'Safely decommission and archive models from the registry.' }
+  { id: 'routing', num: '06', title: 'Adaptive Routing', duration: '0:38', description: 'Redirects execution to better-performing models dynamically.', video: '/Videos/Adaptive Routing.mp4' },
+  { id: 'dashboard', num: '07', title: 'Pipeline Dashboard', duration: '1:12', description: 'Real-time telemetry and execution monitoring for pipelines.', video: '/Videos/Pipeline Dashboard.mp4' },
+  { id: 'inference', num: '08', title: 'Data Processing', duration: '0:50', description: 'Test individual inputs against deployed models instantly.', video: '/Videos/Data Processing.mp4' },
+  { id: 'management', num: '09', title: 'Model Training', duration: '0:44', description: 'Safely decommission and archive models from the registry.', video: '/Videos/Model Training.mp4' }
 ];
 
 export function PlatformExperienceSection() {
