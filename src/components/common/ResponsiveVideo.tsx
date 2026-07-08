@@ -1,4 +1,5 @@
-import { VideoHTMLAttributes } from 'react';
+import { VideoHTMLAttributes, useRef } from 'react';
+import { useInView } from 'framer-motion';
 import { cn } from '@/utils/cn';
 
 export interface ResponsiveVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
@@ -18,6 +19,8 @@ export function ResponsiveVideo({
   controls = false,
   ...props
 }: ResponsiveVideoProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, margin: "200px" });
 
   const aspectRatioClasses = {
     '16/9': 'aspect-video',
@@ -37,6 +40,7 @@ export function ResponsiveVideo({
 
   return (
     <div
+      ref={containerRef}
       className={cn(
         'relative overflow-hidden bg-slate-50/50', // Lighter background for a cleaner placeholder
         aspectRatioClasses[aspectRatio],
@@ -51,7 +55,7 @@ export function ResponsiveVideo({
         </div>
       )}
       
-      {src && (
+      {src && isInView && (
         <video
           src={src}
           poster={poster}
@@ -60,6 +64,7 @@ export function ResponsiveVideo({
           loop={loop}
           controls={controls}
           playsInline // Crucial for iOS autoplay
+          preload="none"
           className={cn(
             'h-full w-full object-cover transition-opacity duration-700 opacity-100'
           )}

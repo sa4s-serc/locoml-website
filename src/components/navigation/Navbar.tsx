@@ -75,7 +75,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-4 md:flex relative z-10">
           <a
-            href="https://github.com/sa4s-serc/locoml-deployed"
+            href="https://github.com/sa4s-serc/locoml"
             target="_blank"
             rel="noopener noreferrer"
             className="text-paragraph hover:text-heading transition-colors"
@@ -119,7 +119,7 @@ export function Navbar() {
             <Divider className="my-2" />
             <div className="flex items-center justify-between">
               <a
-                href="https://github.com/sa4s-serc/locoml-deployed"
+                href="https://github.com/sa4s-serc/locoml"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-paragraph hover:text-heading transition-colors"
