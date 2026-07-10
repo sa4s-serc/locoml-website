@@ -31,7 +31,7 @@ export function TeamCard({ contributor, isLarge = false }: TeamCardProps) {
         )}
       >
         {contributor.photo ? (
-          <img src={contributor.photo} alt={contributor.name} className="w-full h-full object-cover" />
+          <img src={`${import.meta.env.BASE_URL}${contributor.photo.startsWith('/') ? contributor.photo.slice(1) : contributor.photo}`} alt={contributor.name} className="w-full h-full object-cover" />
         ) : (
           <div className="w-full h-full bg-slate-50 flex items-center justify-center text-slate-400 font-semibold bg-gradient-to-br from-slate-50 to-slate-100">
             <span className={cn(isLarge ? "text-4xl" : "text-3xl")}>

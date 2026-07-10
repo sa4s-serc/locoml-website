@@ -7,21 +7,21 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-[64px] md:gap-[120px] mb-[48px]">
           <a href="#" className="block">
             <img 
-              src="/SA4S.svg" 
+              src={`${import.meta.env.BASE_URL}SA4S.svg`} 
               alt="SA4S" 
               className="h-[120px] md:h-[140px] w-auto object-contain"
             />
           </a>
           <a href="#" className="block">
             <img 
-              src="/SERC.png" 
+              src={`${import.meta.env.BASE_URL}SERC.png`} 
               alt="SERC" 
               className="h-[100px] md:h-[120px] w-auto object-contain grayscale-[0.2]"
             />
           </a>
           <a href="#" className="block">
             <img 
-              src="/IIIT.png" 
+              src={`${import.meta.env.BASE_URL}IIIT.png`} 
               alt="IIIT Hyderabad" 
               className="h-[80px] md:h-[96px] w-auto object-contain"
             />

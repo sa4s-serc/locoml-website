@@ -92,7 +92,7 @@ export function FeaturedPublication() {
           {/* Right Column (40%): Paper Preview */}
           <Slide direction="right" delay={0.4} className="w-full lg:w-[40%] flex justify-center lg:justify-end">
             <a 
-              href="/2501.14165v1.pdf"
+              href={`${import.meta.env.BASE_URL}2501.14165v1.pdf`}
               download="LoCoML_Research_Paper_2025.pdf"
               aria-label="Download LoCoML Research Paper PDF"
               className="block bg-white rounded-lg border border-slate-200 shadow-md p-8 md:p-10 w-full max-w-[450px] aspect-[1/1.414] relative group hover:-translate-y-1 hover:shadow-lg hover:border-primary active:bg-slate-50/50 active:scale-[0.99] active:shadow-sm transition-all duration-[250ms] active:duration-[120ms] ease-out flex flex-col cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4"

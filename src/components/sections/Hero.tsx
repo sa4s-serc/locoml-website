@@ -115,7 +115,7 @@ export function Hero() {
                   <div className="relative w-full aspect-video rounded-2xl border border-slate-100 overflow-hidden bg-slate-50/80">
                     <div className="absolute inset-0 flex items-center justify-center bg-slate-50">
                       <ResponsiveVideo 
-                        src="/Videos/Screen Recording 2026-07-07 111202.mp4" 
+                        src={`${import.meta.env.BASE_URL}Videos/Screen Recording 2026-07-07 111202.mp4`} 
                         poster=""
                         autoPlay={true}
                         loop={true}
@@ -219,7 +219,7 @@ export function Hero() {
                 {/* 16:9 Video Area */}
                 <div className="w-full h-full bg-slate-950 flex items-center justify-center overflow-hidden">
                   <ResponsiveVideo 
-                    src="/Videos/Screen Recording 2026-07-07 111202.mp4" 
+                    src={`${import.meta.env.BASE_URL}Videos/Screen Recording 2026-07-07 111202.mp4`} 
                     poster=""
                     autoPlay={true}
                     loop={true}
