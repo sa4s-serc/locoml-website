@@ -4,16 +4,18 @@ import svgr from 'vite-plugin-svgr';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
-// https://vite.dev/config/
 export default defineConfig({
+  base: '/locoml-website/',   // 👈 Add this line
+
   plugins: [
     react(),
     tailwindcss(),
     svgr()
   ],
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
-  },
+  }
 });
